@@ -20,7 +20,7 @@
     <application
         android:name=".FaceGuardApp"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_shield"
         android:label="@string/app_name"
         android:theme="@style/Theme.FaceGuard"
         android:supportsRtl="true">
