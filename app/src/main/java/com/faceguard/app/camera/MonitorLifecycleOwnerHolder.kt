@@ -13,14 +13,12 @@ import androidx.lifecycle.LifecycleRegistry
  */
 object MonitorLifecycleOwnerHolder {
 
-    private val registry: LifecycleRegistry = LifecycleRegistry(object : LifecycleOwner {
-        override val lifecycle: Lifecycle get() = registry
-    }).apply {
-        currentState = Lifecycle.State.CREATED
-    }
-
     val owner = object : LifecycleOwner {
         override val lifecycle: Lifecycle get() = registry
+    }
+
+    private val registry: LifecycleRegistry = LifecycleRegistry(owner).apply {
+        currentState = Lifecycle.State.CREATED
     }
 
     fun markResumed() {
