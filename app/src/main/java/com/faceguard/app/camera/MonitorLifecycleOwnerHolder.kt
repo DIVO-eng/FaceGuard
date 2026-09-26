@@ -13,7 +13,7 @@ import androidx.lifecycle.LifecycleRegistry
  */
 object MonitorLifecycleOwnerHolder {
 
-    private val registry = LifecycleRegistry(object : LifecycleOwner {
+    private val registry: LifecycleRegistry = LifecycleRegistry(object : LifecycleOwner {
         override val lifecycle: Lifecycle get() = registry
     }).apply {
         currentState = Lifecycle.State.CREATED
