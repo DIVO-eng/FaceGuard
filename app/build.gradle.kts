@@ -77,6 +77,6 @@ dependencies {
 
     // SQLCipher: encrypts the Room database file itself (event metadata),
     // keyed by a passphrase sealed in the Android Keystore.
-    implementation("net.zetetic:android-database-sqlcipher:4.5.6")
+    implementation("net.zetetic:android-database-sqlcipher:4.5.4")
     implementation("androidx.sqlite:sqlite:2.4.0")
 }
