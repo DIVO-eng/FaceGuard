@@ -1,4 +1,6 @@
+@file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 package com.faceguard.app.ui
+import androidx.compose.ui.Alignment
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
