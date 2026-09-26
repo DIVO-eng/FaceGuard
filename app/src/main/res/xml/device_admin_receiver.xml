@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FaceGuard requests the MINIMUM device-admin policies possible.
+  We do NOT request wipe-data, lock-screen-control, or password-reset powers,
+  since the app only needs to be *notified* of failed/successful unlock
+  attempts, never to control or bypass the lock screen itself.
+-->
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-policies>
+        <watch-login />
+    </uses-policies>
+</device-admin>

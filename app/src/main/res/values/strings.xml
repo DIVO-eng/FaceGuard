@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FaceGuard</string>
+    <string name="monitor_notification_title">FaceGuard is monitoring</string>
+    <string name="monitor_notification_body">Watching for lock-screen authentication events</string>
+    <string name="notif_title_format">FaceGuard event at %1$s</string>
+    <string name="event_failed_unlock">Failed unlock attempt detected</string>
+    <string name="event_successful_unlock">Successful unlock detected</string>
+    <string name="event_repeated_failures">Repeated failed attempts detected</string>
+    <string name="repeated_failures_title">Multiple failed attempts</string>
+    <string name="repeated_failures_body">%1$d failed unlock attempts in a short period</string>
+</resources>
