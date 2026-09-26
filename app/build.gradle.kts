@@ -74,6 +74,7 @@ dependencies {
 
     // ML Kit on-device face detection (no cloud calls)
     implementation("com.google.mlkit:face-detection:16.1.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
 
     // Google Drive backup (optional, user-enabled)
     implementation("com.google.android.gms:play-services-auth:21.2.0")
