@@ -1,7 +1,7 @@
 package com.faceguard.app
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import androidx.fragment.app.FragmentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import androidx.navigation.compose.NavHost
@@ -11,7 +11,7 @@ import com.faceguard.app.ui.*
 import com.faceguard.app.ui.theme.FaceGuardTheme
 import com.faceguard.app.util.SecurePrefs
 
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
