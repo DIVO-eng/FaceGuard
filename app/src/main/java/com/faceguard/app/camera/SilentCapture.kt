@@ -33,6 +33,7 @@ object SilentCapture {
                     .build()
 
                 val selector = CameraSelector.DEFAULT_FRONT_CAMERA
+            MonitorLifecycleOwnerHolder.markResumed()
                 provider.unbindAll()
                 // NOTE: on real devices this requires binding to a LifecycleOwner.
                 // In the foreground service we use a ProcessLifecycleOwner-backed
@@ -50,12 +51,14 @@ object SilentCapture {
                         override fun onCaptureSuccess(image: ImageProxy) {
                             val bytes = imageProxyToJpegBytes(image)
                             image.close()
+                        MonitorLifecycleOwnerHolder.markStopped()
                             provider.unbindAll()
                             if (cont.isActive) cont.resume(bytes)
                         }
 
                         override fun onError(exception: ImageCaptureException) {
                             Log.w(TAG, "Capture failed: ${exception.message}")
+                        MonitorLifecycleOwnerHolder.markStopped()
                             provider.unbindAll()
                             if (cont.isActive) cont.resume(null)
                         }
@@ -63,6 +66,7 @@ object SilentCapture {
                 )
             } catch (t: Throwable) {
                 Log.w(TAG, "Capture setup failed: ${t.message}")
+                MonitorLifecycleOwnerHolder.markStopped()
                 if (cont.isActive) cont.resume(null)
             }
         }
