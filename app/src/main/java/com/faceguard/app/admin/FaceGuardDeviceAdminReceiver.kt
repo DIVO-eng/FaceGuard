@@ -35,11 +35,13 @@ class FaceGuardDeviceAdminReceiver : DeviceAdminReceiver() {
 
     override fun onPasswordFailed(context: Context, intent: Intent) {
         super.onPasswordFailed(context, intent)
+        android.widget.Toast.makeText(context, "FaceGuard: password FAILED detected", android.widget.Toast.LENGTH_LONG).show()
         MonitorService.enqueueAuthEvent(context, AuthEventType.FAILED_UNLOCK)
     }
 
     override fun onPasswordSucceeded(context: Context, intent: Intent) {
         super.onPasswordSucceeded(context, intent)
+        android.widget.Toast.makeText(context, "FaceGuard: password SUCCESS detected", android.widget.Toast.LENGTH_LONG).show()
         MonitorService.enqueueAuthEvent(context, AuthEventType.SUCCESSFUL_UNLOCK)
     }
 }
